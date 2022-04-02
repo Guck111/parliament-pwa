@@ -17,7 +17,8 @@ export const removeAnswer = createEvent()
 export const $store = createStore(defaultStore)
 	.on(setCurrentStep, (store, currentStep) => ({
 		...store,
-		currentStep
+		currentStep,
+		answers: currentStep === 0 ? [] : store.answers
 	})).on(setAnswer, (store, answer) => ({
 		...store,
 		answers: [...store.answers, answer]
