@@ -1,4 +1,4 @@
-import "./index.css"
+import "./assets/index.css"
 import ReactDOM from "react-dom"
 import { App } from "./App"
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration"

@@ -1,10 +1,7 @@
+import { PageResolver } from "./components/PageResolver"
 
 export const App = () => {
-  return (
-    <div className="App">
-      
-    </div>
-  )
+  return <PageResolver />
 }
 
 export default App
