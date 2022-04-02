@@ -9,11 +9,11 @@ import { setCurrentStep } from "./store"
 const getBG = (number: number) => {
   switch (number) {
     case 1:
-      return _1
+      return _3
     case 2:
       return _2
     case 3:
-      return _3
+      return _1
     default:
       return ""
   }
