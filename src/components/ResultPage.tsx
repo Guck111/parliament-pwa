@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { useStore } from "effector-react"
-import { $store } from "./store"
+import { $store, setCurrentStep } from "./store"
 import res_1 from "../assets/img/res_1.png"
 import res_2 from "../assets/img/res_2.png"
 import res_3 from "../assets/img/res_3.png"
@@ -14,6 +14,8 @@ import ru_res_3 from "../assets/video/ru/3.mp4"
 import kz_res_1 from "../assets/video/kz/1.mp4"
 import kz_res_2 from "../assets/video/kz/2.mp4"
 import kz_res_3 from "../assets/video/kz/3.mp4"
+
+import homeIcon from "../assets/img/home.svg"
 
 const getResult = (answers: number[]) => {
   const result = answers.reduce((a, b) => a + b, 0)
@@ -36,6 +38,8 @@ export const ResultPage = () => {
   const [showVideo, setShowVideo] = useState(false)
   const { video, bg, title } = getResult(answers)
 
+  const homeButtonClick = () => setCurrentStep(0)
+
   useEffect(() => {
     setTimeout(() => {
       setShowVideo(true)
@@ -45,9 +49,12 @@ export const ResultPage = () => {
   return (
     <Wrap bg={showVideo ? "" : bg}>
       {showVideo ? (
-        <Video controls autoPlay>
-          <source src={video} type="video/mp4" />
-        </Video>
+        <>
+          <Video controls autoPlay>
+            <source src={video} type="video/mp4" />
+          </Video>
+          <Button onClick={homeButtonClick} icon={homeIcon} />
+        </>
       ) : (
         <Title>
           {title}
@@ -66,6 +73,7 @@ const Wrap = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 `
 
 const Title = styled.div`
@@ -97,4 +105,17 @@ const Subtitle = styled.span`
 const Video = styled.video`
   height: 100%;
   width: 100%;
+`
+
+const Button = styled.div`
+  width: 56px;
+  height: 56px;
+  background: #051a56;
+  border-radius: 16px;
+  background-image: ${({ icon }: { icon: string }) => `url(${icon})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 36px;
+  right: 36px;
 `
