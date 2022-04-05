@@ -50,9 +50,7 @@ export const ResultPage = () => {
     <Wrap bg={showVideo ? "" : bg}>
       {showVideo ? (
         <>
-          <Video controls autoPlay>
-            <source src={video} type="video/mp4" />
-          </Video>
+          <Video preload="auto" src={video} controls></Video>
           <Button onClick={homeButtonClick} icon={homeIcon} />
         </>
       ) : (
