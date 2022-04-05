@@ -89,7 +89,7 @@ const Title = styled.div`
   backdrop-filter: blur(24px);
   border-radius: 22px;
   font-family: "SF Pro";
-  font-size: 40px;
+  font-size: 36px;
   line-height: 64px;
   text-transform: uppercase;
   color: #ffffff;
