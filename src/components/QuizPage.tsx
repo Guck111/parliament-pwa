@@ -110,7 +110,7 @@ const Header = styled.div`
   left: 50%;
   top: 48px;
   transform: translateX(-50%);
-  background: rgba(0, 58, 207, 0.72);
+  background: rgb(1 21 72 / 72%);
   box-shadow: 0px 8px 32px rgba(3, 6, 23, 0.32),
     inset 0px 4px 48px 16px rgba(18, 101, 185, 0.32);
   backdrop-filter: blur(24px);
