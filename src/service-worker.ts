@@ -8,6 +8,14 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
+import ru_res_1 from "./assets/video/ru/1.mp4"
+import ru_res_2 from "./assets/video/ru/2.mp4"
+import ru_res_3 from "./assets/video/ru/3.mp4"
+
+import kz_res_1 from "./assets/video/kz/1.mp4"
+import kz_res_2 from "./assets/video/kz/2.mp4"
+import kz_res_3 from "./assets/video/kz/3.mp4"
+
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
@@ -78,3 +86,17 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+const cacheStorageName = 'v1';
+const cacheAvailable = 'caches' in self;
+console.log("🚀 ~ file: service-worker.ts ~ line 84 ~ cacheAvailable", cacheAvailable)
+
+cacheAvailable && self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(cacheStorageName).then(function (cache) {
+      return cache.addAll([ru_res_1, ru_res_2, ru_res_3, kz_res_1, kz_res_2, kz_res_3]).then((res) => {
+        console.log("🚀 ~ file: ~ res", res)
+      })
+    })
+  );
+});
