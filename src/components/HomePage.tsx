@@ -55,16 +55,16 @@ const Proposal = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  width: 909px;
-  height: 400px;
+  width: 74vw;
+  height: 55vh;
   background: rgba(0, 58, 207, 0.56);
   box-shadow: 0px 16px 64px rgba(3, 6, 23, 0.64),
     inset 0px 4px 64px 16px rgba(18, 101, 185, 0.32);
   backdrop-filter: blur(24px);
   border-radius: 22px;
   font-family: "SF Pro";
-  font-size: 40px;
-  line-height: 64px;
+  font-size: 4vmax;
+  line-height: 5vmax;
   color: #ffffff;
-  padding: 0 200px;
+  padding: 0 9vw;
 `

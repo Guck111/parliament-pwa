@@ -77,18 +77,18 @@ const Wrap = styled.div`
 const Title = styled.div`
   position: absolute;
   width: 90%;
-  height: 136px;
+  height: 17vh;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 110px;
+  bottom: 9vh;
   background: rgba(0, 58, 207, 0.72);
   box-shadow: 0px 16px 64px rgba(3, 6, 23, 0.64),
     inset 0px 4px 64px 16px rgba(18, 101, 185, 0.32);
   backdrop-filter: blur(24px);
   border-radius: 22px;
   font-family: "SF Pro";
-  font-size: 36px;
-  line-height: 64px;
+  font-size: 3vw;
+  line-height: 4vw;
   text-transform: uppercase;
   color: #ffffff;
   display: flex;
